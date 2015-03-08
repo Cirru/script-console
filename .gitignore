@@ -1,0 +1,7 @@
+
+/extension/build/
+/extension/dist/
+/lib/
+/node_modules/
+/assets.json
+/extension/index.html
