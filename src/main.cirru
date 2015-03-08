@@ -18,6 +18,10 @@ input.addEventListener :keydown $ \ (event)
           event.preventDefault
           compile false
           return undefined
+      if (not event.shiftKey event.altKey)
+        do
+          event.preventDefault
+          manualLineBreak
 
 = compile $ \ (isRun)
   = code input.value
@@ -45,3 +49,20 @@ input.addEventListener :keydown $ \ (event)
 = formatRes $ \ (res)
   = results $ res.map formatLine
   return $ results.join ":\n"
+
+= getHeadSpace $ \ (text head)
+  if (is (. text 0) ": ")
+    do $ return $ getHeadSpace (text.substr 1) (++: head ": ")
+    do $ return head
+
+= manualLineBreak $ \ ()
+  = start input.selectionStart
+  = code input.value
+  = before $ code.substr 0 start
+  = after $ code.substr start
+  = lines $ before.split ":\n"
+  = lastLine $ . lines $ - lines.length 1
+  = headSpace $ getHeadSpace lastLine :
+
+  = input.value $ ++: before ":\n" headSpace after
+  = input.selectionStart $ + start headSpace.length 1
