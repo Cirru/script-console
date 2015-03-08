@@ -1,8 +1,7 @@
 {
-  "name": "webpack-workflow",
-  "version": "0.0.1",
-  "description": "Web app scaffold based on Webpack",
-  "main": "main.js",
+  "name": "script-console",
+  "version": "0.0.2",
+  "description": "Devtools plugin for CirruScript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,10 +25,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/mvc-works/webpack-workflow.git"
+    "url": "https://github.com/Cirru/script-console.git"
   },
   "bugs": {
-    "url": "https://github.com/mvc-works/webpack-workflow/issues"
+    "url": "https://github.com/Cirru/script-console/issues"
   },
-  "homepage": "https://github.com/mvc-works/webpack-workflow"
+  "homepage": "https://github.com/Cirru/script-console"
 }

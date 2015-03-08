@@ -33,12 +33,11 @@ input.addEventListener :keydown $ \ (event)
         do $ chrome.devtools.inspectedWindow.eval res.js $ \ (res err)
           if (? err)
             do
-              = output.value err.value
+              = output.value $ ++: ":Runtime Error:\n\n" err.value
     , error
     do
-      = log ":Compile error:\n\n"
+      = log ":Compile Error:\n\n"
       = log $ ++: log error
-      console.log error
       = output.value log
 
 
@@ -65,4 +64,4 @@ input.addEventListener :keydown $ \ (event)
   = headSpace $ getHeadSpace lastLine :
 
   = input.value $ ++: before ":\n" headSpace after
-  = input.selectionStart $ + start headSpace.length 1
+  = input.selectionStart $ = input.selectionEnd $ + start headSpace.length 1
