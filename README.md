@@ -14,7 +14,7 @@ Chrome extension for running CirruScript in consoles.
 
 ### Develop
 
-```
+```text
 npm i
 webpack
 gulp html
@@ -22,7 +22,7 @@ gulp html
 
 ### Package
 
-```
+```text
 webpack --config webpack.min.js
 WEB_ENV=min gulp html
 ```
