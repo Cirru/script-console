@@ -8,7 +8,7 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "keywords": [
-    "workflow"
+    "cirru"
   ],
   "devDependencies": {
     "cirru-script": "^0.2.3",
