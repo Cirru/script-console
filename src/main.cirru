@@ -21,6 +21,7 @@ input.addEventListener :keydown $ \ (event)
       if (not event.shiftKey event.altKey) $ do
         event.preventDefault
         manualLineBreak
+  , undefined
 
 var
   compile $ \ (isRun)
@@ -34,10 +35,13 @@ var
           do $ chrome.devtools.inspectedWindow.eval js $ \ (response err)
             if (? err) $ do
               = output.value $ + ":Runtime Error:\n\n" err.value
+            , undefined
+        , undefined
       error
         var $ log ":Compile Error:\n\n"
         = log $ + log error
         = output.value log
+    , undefined
 
 var
   formatLine $ \ (several)
@@ -48,12 +52,12 @@ var
   formatRes $ \ (res)
     var
       results $ res.map formatLine
-    return $ results.join ":\n"
+    results.join ":\n"
 
   getHeadSpace $ \ (text head)
-    if (is (. text 0) ": ")
-      do $ return $ getHeadSpace (text.substr 1) (+ head ": ")
-      do $ return head
+    cond (is (. text 0) ": ")
+      getHeadSpace (text.substr 1) (+ head ": ")
+      , head
 
   manualLineBreak $ \ ()
     var

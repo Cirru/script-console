@@ -1,6 +1,6 @@
 {
   "name": "script-console",
-  "version": "0.0.2",
+  "version": "0.4.26",
   "description": "Devtools plugin for CirruScript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,8 @@
     "cirru"
   ],
   "devDependencies": {
-    "cirru-script": "^0.2.3",
-    "cirru-script-loader": "^0.1.0",
+    "cirru-script": "0.4.26",
+    "cirru-script-loader": "^0.4.26",
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.9.0",
     "css-loader": "^0.9.1",
